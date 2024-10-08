@@ -1,7 +1,6 @@
 
 
 let flowfield;
-let mover;
 function draw_grid() {
   for (let row = 0; row < flowfield.rows; row++)
     line(0, row * flowfield.resolution, windowWidth, row * flowfield.resolution);
@@ -13,8 +12,6 @@ function draw_grid() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   flowfield = new FlowField();
-  mover = new Mover();
-
 
   draw_grid();
 }
@@ -25,5 +22,4 @@ function draw() {
   background(255);
   flowfield.draw();
   flowfield.update();
-  mover.applyForce(flowfield.lookup(mover.position));
 }
