@@ -1,24 +1,4 @@
 
-class FlowField {
-  constructor() {
-    this.resolution = 50;
-    this.cols = floor(windowWidth / this.resolution);
-    this.rows = floor(windowHeight / this.resolution);
-
-    this.field = new Array(this.cols);
-    for (let i = 0; i < this.cols; i++)
-      this.field[i] = new Array(this.rows);
-
-
-    for (let i = 0; i < this.cols; i++)
-      for (let j = 0; j < this.rows; j++) {
-        let vector = p5.Vector.random2D();
-        this.field[i][j] = vector;
-        console.log(vector);
-      }
-  }
-}
-
 
 let flowfield;
 
@@ -68,27 +48,18 @@ function draw_vectors() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   flowfield = new FlowField();
-  console.log(`columnas ${flowfield.cols}`);
-  console.log(`filas ${flowfield.rows}`);
-
-
 
   stroke('purple');
   strokeWeight(3);
-  frameRate(1);
 
-
-  background(255);
   draw_grid();
-  perlin_noise_vectors();
-  draw_vectors();
-
 }
 
 
 
 function draw() {
-
-
+  background(255);
+  flowfield.draw();
+  flowfield.update();
 
 }
