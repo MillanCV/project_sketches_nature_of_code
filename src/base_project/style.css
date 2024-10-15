@@ -1,0 +1,67 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.modern-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10; /* Ensures the button is above the canvas */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.modern-button:hover {
+  background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.modern-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the overlay */
+.text-overlay {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 20px; /* Padding around the content */
+  border-radius: 10px; /* Rounded corners */
+  position: fixed; /* Fix the position to the viewport */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the width and height */
+  width: 50%; /* Limit the width */
+  max-height: 50%; /* Limit the height */
+  overflow-y: auto; /* Scroll if content is too long */
+  z-index: 1000; /* Ensure the overlay is above other content */
+}
+
+/* Styling for headings */
+
+.text-overlay h1 {
+  font-size: 28px; /* Font size for h1 */
+  margin: 10px 0; /* Space around h1 */
+}
+
+.text-overlay h2 {
+  font-size: 24px; /* Font size for h2 */
+  margin: 10px 0; /* Space around h2 */
+}
+
+.text-overlay h3 {
+  font-size: 20px; /* Font size for h3 */
+  margin: 10px 0; /* Space around h3 */
+}
