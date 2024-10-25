@@ -1,10 +1,12 @@
 // utils/Mover.js
+import { colors } from './utils/color_palette.js';
+
 export default class Mover {
     constructor(p, x, y) {
         this.position = p.createVector(x, y); // Use p5.js's createVector for position
         this.velocity = p.createVector(0, 0);
-        this.acceleration = p.createVector(0, 0);
-        this.size = 20; // Size of the mover
+        this.acceleration = p.createVector(20, 0);
+        this.size = 50; // Size of the mover
     }
 
     applyForce(force) {
@@ -18,7 +20,8 @@ export default class Mover {
     }
 
     display(p) {
-        p.fill(127);
+        p.noStroke();
+        p.fill(colors["very-light"]);
         p.ellipse(this.position.x, this.position.y, this.size, this.size);
     }
 
